@@ -14,55 +14,30 @@ const axios = require('axios');
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'rollno', label: 'GES-ID', minWidth: 100 },
   {
-    id: 'population',
-    label: 'Population',
+    id: 'email',
+    label: 'Email',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    id: 'mobile',
+    label: 'Mobile',
     minWidth: 170,
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
   },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
-  { id: 'name2', label: 'Name2', align: 'right', minWidth: 170 },
-  { id: 'name3', label: 'Name3', align: 'right', minWidth: 170 },
-  { id: 'name4', label: 'Name4', align: 'right', minWidth: 170 },
+  { id: 'email2', label: 'Email2', align: 'right', minWidth: 170 },
+  { id: 'email3', label: 'Email3', align: 'right', minWidth: 170 },
+  { id: 'email4', label: 'Email4', align: 'right', minWidth: 170 },
+  { id: 'email5', label: 'Email5', align: 'right', minWidth: 170 },
 ];
 
-function createData(name, code, population, size , name2 , name3,name4) {
-  const density = population / size;
-  return { name, code, population, size, density, name2, name3,name4 };
+function createData(name, rollno, email, mobile,email2, email3, email4,email5){
+  return { name, rollno, email, mobile,email2, email3, email4,email5 };
 }
 
-const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
-];
 
 const useStyles = makeStyles({
   root: {
@@ -85,9 +60,9 @@ export default function Table8() {
     async function fetching () {
       try {
         const rows = [];
-        const response = await axios.get('https://node.ecell-iitkgp.org/comp/getAllDataOfTable?tableName=deep_learning_reg_iit');
+        const response = await axios.get('https://node.ecell-iitkgp.org/comp/getAllDataOfTable?tableName=gamesman_reg');
         response.data.map(e => {
-          rows.push(createData(e.name_iit1,e.roll1,e.email_iit1,e.mobile_iit1,e.email_iit2,e.email_iit3,e.email_iit4,e.email_iit5));
+          rows.push(createData(e.name1,e.ges_id1,e.email1,e.mobile1,e.email2,e.email3,e.email4,e.email5));
         })
         setRow(rows);
       } catch (error) {

@@ -81,13 +81,13 @@ export default function ScrollableTabsButtonForce(props) {
         >
           <Tab label="Select Event"  {...a11yProps(0)} />
           <Tab label="DeepLearning_IITKGP"  {...a11yProps(1)} />
-          <Tab label="Item Two"  {...a11yProps(2)} />
-          <Tab label="Item Three"{...a11yProps(3)} />
-          <Tab label="Item Four" {...a11yProps(4)} />
-          <Tab label="Item Five" {...a11yProps(5)} />
-          <Tab label="Item Six" {...a11yProps(6)} />
-          <Tab label="Item Seven" {...a11yProps(7)} />
-          <Tab label="Item Eight" {...a11yProps(8)} />
+          <Tab label="DeepLearning_NON-IITKGP"  {...a11yProps(2)} />
+          <Tab label="StockTrading_IITKGP "{...a11yProps(3)} />
+          <Tab label="StockTrading_NON-IITKGP " {...a11yProps(4)} />
+          <Tab label="TreasureHunt_IITKGP" {...a11yProps(5)} />
+          <Tab label="TreasureHunt_NON-IITKGP" {...a11yProps(6)} />
+          <Tab label="GamesmanSquare_IITKGP" {...a11yProps(7)} />
+          <Tab label="GamesmanSquare_NON-IITKGP" {...a11yProps(8)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
